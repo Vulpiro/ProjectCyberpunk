@@ -1,0 +1,7 @@
+D:\Projekty\CSHARP\Cyberpunk_simulation\Cyberpunk_simulation\bin\Debug\Cyberpunk_simulation.exe.config
+D:\Projekty\CSHARP\Cyberpunk_simulation\Cyberpunk_simulation\bin\Debug\Cyberpunk_simulation.exe
+D:\Projekty\CSHARP\Cyberpunk_simulation\Cyberpunk_simulation\bin\Debug\Cyberpunk_simulation.pdb
+D:\Projekty\CSHARP\Cyberpunk_simulation\Cyberpunk_simulation\obj\Debug\Cyberpunk_simulation.csproj.AssemblyReference.cache
+D:\Projekty\CSHARP\Cyberpunk_simulation\Cyberpunk_simulation\obj\Debug\Cyberpunk_simulation.csproj.CoreCompileInputs.cache
+D:\Projekty\CSHARP\Cyberpunk_simulation\Cyberpunk_simulation\obj\Debug\Cyberpunk_simulation.exe
+D:\Projekty\CSHARP\Cyberpunk_simulation\Cyberpunk_simulation\obj\Debug\Cyberpunk_simulation.pdb
