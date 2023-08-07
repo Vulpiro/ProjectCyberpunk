@@ -11,7 +11,7 @@ namespace Cyberpunk_simulation
         public MeleWeapon(string name, int obr, int la)
         {
             Name = name;
-            OBR = obr;
+            DMG = obr;
             LA = la;
             WT = WeaponType.Mele;
         }

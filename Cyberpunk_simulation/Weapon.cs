@@ -16,7 +16,7 @@ namespace Cyberpunk_simulation
         public WeaponType WT{ get; set; }
         public string Name { get; set; }
 
-        public int OBR { get; set; }
+        public int DMG { get; set; }
         public int LA { get; set; }
 
         public abstract bool IsAbleToShoot();

@@ -52,19 +52,19 @@ namespace Cyberpunk_simulation
         public int PosY { get; set; }
 
         public Character(string name, CharaRole role,
-            int inte, int refl, int zw, int tech, int cha, int sw, int sz, int ruch, int bc, int emp)
+            int inte, int refl, int dex, int tech, int cool, int will, int luck, int move, int body, int emp)
         {
             Name = name;
             Role = role;
             INT = inte;
             REF = refl;
-            DEX = zw;
+            DEX = dex;
             TECH = tech;
-            COOL = cha;
-            WILL = sw;
-            LUCK = sz;
-            MOVE = ruch;
-            BODY = bc;
+            COOL = cool;
+            WILL = will;
+            LUCK = luck;
+            MOVE = move;
+            BODY = body;
             EMP = emp;
             SetMaxHP();
         }

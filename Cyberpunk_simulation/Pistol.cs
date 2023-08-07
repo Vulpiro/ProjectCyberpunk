@@ -8,10 +8,10 @@ namespace Cyberpunk_simulation
 {
     class Pistol : Gun
     {
-        public Pistol(string name, int obr, int aim, int air, int la) : base(name, obr, aim, air, la)
+        public Pistol(string name, int dmg, int aim, int air, int la) : base(name, dmg, aim, air, la)
         {
             Name = name;
-            OBR = obr;
+            DMG = dmg;
             MaxAmmoInMag = aim;
             AmmoInMag = aim;
             AmmoInRes = air;

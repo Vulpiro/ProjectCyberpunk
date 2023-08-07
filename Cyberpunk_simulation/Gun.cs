@@ -14,10 +14,10 @@ namespace Cyberpunk_simulation
         public int AmmoInRes { get; set; }
 
 
-        public Gun(string name, int obr, int aim, int air, int la)
+        public Gun(string name, int dmg, int aim, int air, int la)
         {
             Name = name;
-            OBR = obr;
+            DMG = dmg;
             MaxAmmoInMag = aim;
             AmmoInMag = aim;
             AmmoInRes = air;
@@ -60,7 +60,7 @@ namespace Cyberpunk_simulation
         public override int CalculateDamage()
         {
             int dmg = 0;
-            for (int i = 0; i < OBR; i++)
+            for (int i = 0; i < DMG; i++)
             {
                 Random rnd = new Random(Guid.NewGuid().GetHashCode());
                 int dice = rnd.Next(1, 7);
