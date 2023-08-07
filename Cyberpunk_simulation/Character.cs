@@ -28,13 +28,13 @@ namespace Cyberpunk_simulation
         #region Main Stats
         public int INT { get; set; }
         public int REF { get; set; }
-        public int ZW { get; set; }
+        public int DEX { get; set; }
         public int TECH { get; set; }
-        public int CHA { get; set; }
-        public int SW { get; set; }
-        public int SZ { get; set; }
-        public int RUCH { get; set; }
-        public int BC { get; set; }
+        public int COOL { get; set; }
+        public int WILL { get; set; }
+        public int LUCK { get; set; }
+        public int MOVE { get; set; }
+        public int BODY { get; set; }
         public int EMP { get; set; }
 
         public int MaxHP { get; set; }
@@ -58,13 +58,13 @@ namespace Cyberpunk_simulation
             Role = role;
             INT = inte;
             REF = refl;
-            ZW = zw;
+            DEX = zw;
             TECH = tech;
-            CHA = cha;
-            SW = sw;
-            SZ = sz;
-            RUCH = ruch;
-            BC = bc;
+            COOL = cha;
+            WILL = sw;
+            LUCK = sz;
+            MOVE = ruch;
+            BODY = bc;
             EMP = emp;
             SetMaxHP();
         }
@@ -72,7 +72,7 @@ namespace Cyberpunk_simulation
         #region Stats Methods
         public void SetMaxHP()
         {
-            MaxHP = (10 + (5 * (int)Math.Ceiling((double)(SW + BC) / 2)));
+            MaxHP = (10 + (5 * (int)Math.Ceiling((double)(WILL + BODY) / 2)));
             CurrentHP = MaxHP;
         }
 
