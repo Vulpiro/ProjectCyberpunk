@@ -53,6 +53,7 @@ namespace Cyberpunk_simulation
                 return 10000;
             }
             return 10000;
+            
         }
     }
 }
