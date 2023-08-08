@@ -6,25 +6,15 @@ using System.Threading.Tasks;
 
 namespace Cyberpunk_simulation
 {
-    enum CharaRole
-    {
-        None,
-        Rocker,
-        Solo,
-        Netrunner,
-        Tech,
-        Medtech,
-        Media,
-        Exec,
-        Lawmen,
-        Fixer,
-        Nomad
-    }
+    
     class Character
     {
         public string Name { get; set; }
 
-        public CharaRole Role { get; set; }
+        #region Role
+        public CharacterRole Role { get; set; }
+        public int RoleRank { get; set; }
+        #endregion
         #region Main Stats
         public int INT { get; set; }
         public int REF { get; set; }
@@ -51,7 +41,7 @@ namespace Cyberpunk_simulation
         public int PosX { get; set; }
         public int PosY { get; set; }
 
-        public Character(string name, CharaRole role,
+        public Character(string name, CharacterRole role,
             int inte, int refl, int dex, int tech, int cool, int will, int luck, int move, int body, int emp)
         {
             Name = name;
@@ -67,6 +57,8 @@ namespace Cyberpunk_simulation
             BODY = body;
             EMP = emp;
             SetMaxHP();
+
+            RoleRank = 4;
         }
 
         #region Stats Methods

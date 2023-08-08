@@ -8,11 +8,11 @@ namespace Cyberpunk_simulation
 {
     class Combat
     {
-        
-        public static void StartFight(Character[] characterArray)
+
+        public static void StartCombat(Character[] characterArray)
         {
             RollForInitiative(characterArray);
-
+            characterArray = SortByInitiative(characterArray);
         }
 
         public static void RollForInitiative(Character[] characters)
@@ -22,8 +22,12 @@ namespace Cyberpunk_simulation
                 Console.WriteLine("{0} Rzuca za iinicjatywe!", c.Name);
                 c.GetInitiative();
             }
-            Character[] sortedCharaArr = characters.OrderByDescending(c => c.Initiative).ToArray();
         }
 
+        public static Character[] SortByInitiative(Character[] characters)
+        {
+            Character[] sortedCharaArr = characters.OrderByDescending(c => c.Initiative).ToArray();
+            return sortedCharaArr;
+        }
     }
 }

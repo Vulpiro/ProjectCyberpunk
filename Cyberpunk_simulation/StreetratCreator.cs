@@ -8,7 +8,7 @@ namespace Cyberpunk_simulation
 {
     class StreetratCreator
     {
-        public static void CreateSRRNDCharacter(string name, CharaRole egr)
+        public static void CreateSRRNDCharacter(string name, CharacterRole egr)
         {
             int intt = 0;
             int reff = 0;
@@ -27,28 +27,28 @@ namespace Cyberpunk_simulation
             //Roll Your STATS
             switch (egr)
             {
-                case CharaRole.None:
+                case CharacterRole.None:
                     break;
-                case CharaRole.Rocker:
+                case CharacterRole.Rocker:
                     GenerateSTATS.GenerateRockerRNDSTATS(out intt, out reff, out dex, out tech, out cool, out will, out luck, out move, out body, out emp);
                     break;
-                case CharaRole.Solo:
+                case CharacterRole.Solo:
                     break;
-                case CharaRole.Netrunner:
+                case CharacterRole.Netrunner:
                     break;
-                case CharaRole.Tech:
+                case CharacterRole.Tech:
                     break;
-                case CharaRole.Medtech:
+                case CharacterRole.Medtech:
                     break;
-                case CharaRole.Media:
+                case CharacterRole.Media:
                     break;
-                case CharaRole.Exec:
+                case CharacterRole.Exec:
                     break;
-                case CharaRole.Lawmen:
+                case CharacterRole.Lawmen:
                     break;
-                case CharaRole.Fixer:
+                case CharacterRole.Fixer:
                     break;
-                case CharaRole.Nomad:
+                case CharacterRole.Nomad:
                     break;
                 default:
                     break;
