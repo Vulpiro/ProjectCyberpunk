@@ -47,6 +47,12 @@ namespace Cyberpunk_simulation
             return Map[x, y]; 
         }
 
-        
+        public static int CalculateDistance(int x1, int y1, int x2, int y2)
+        {
+            double distance = Math.Sqrt(Math.Pow(Math.Abs(x1 - x2), 2) + Math.Pow(Math.Abs(y1 - y2), 2));
+
+            Console.WriteLine("Dystans pomiedzy postaciami rowna sie {0}", Convert.ToInt32(distance));
+            return Convert.ToInt32(distance);
+        }
     }
 }

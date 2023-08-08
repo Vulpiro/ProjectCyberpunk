@@ -96,7 +96,7 @@ namespace Cyberpunk_simulation
             {
                 if (Weapon1.IsAbleToShoot())
                 {
-                    if(Weapon1.ChallangePT(Weapon1.CalculatePT(Combat.CalculateDistance(PosX, PosY, chara.PosX, chara.PosY)), REF, 12))
+                    if(Weapon1.ChallangePT(Weapon1.CalculatePT(Area.CalculateDistance(PosX, PosY, chara.PosX, chara.PosY)), REF, 12))
                     {
                         chara.GetDamage(Weapon1.CalculateDamage());
                     }

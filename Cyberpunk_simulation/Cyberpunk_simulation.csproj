@@ -47,6 +47,7 @@
     <Compile Include="Combat.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="CompletePackagesCreator.cs" />
+    <Compile Include="Dice.cs" />
     <Compile Include="EdgerunnerCreator.cs" />
     <Compile Include="GenerateSTATS.cs" />
     <Compile Include="Gun.cs" />
