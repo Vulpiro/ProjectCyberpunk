@@ -8,7 +8,7 @@ namespace Cyberpunk_simulation
 {
     class StreetratCreator
     {
-        public static void CreateSRRNDCharacter(string name, CharacterRole egr)
+        public static void CreateStreetratRNDCharacter(string name, CharacterRole egr)
         {
             int intt = 0;
             int reff = 0;
@@ -65,6 +65,10 @@ namespace Cyberpunk_simulation
 
         }
 
+        public static void CreateStreetratUserInputCharacter()
+        {
+            CharacterRole outputRole = Role.UserInputRoleSetup();
+        }
         
     }
 }
