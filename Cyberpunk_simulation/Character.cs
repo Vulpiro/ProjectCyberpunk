@@ -84,8 +84,7 @@ namespace Cyberpunk_simulation
 
         public void GetInitiative()
         {
-            Random rnd = new Random(Guid.NewGuid().GetHashCode());
-            int dice = rnd.Next(1, 11);
+            int dice = Dice.RollD10();
             Console.WriteLine(" REF = {0}, wynik rzutu kości = {1}, lacznie to {2}\n", REF, dice, REF + dice);
             Initiative = REF + dice;
         }
@@ -97,7 +96,7 @@ namespace Cyberpunk_simulation
             {
                 if (Weapon1.IsAbleToShoot())
                 {
-                    if(Weapon1.ChallangePT(Weapon1.CalculatePT(Battle.CalculateDistance(PosX, PosY, chara.PosX, chara.PosY)), REF, 12))
+                    if(Weapon1.ChallangePT(Weapon1.CalculatePT(Combat.CalculateDistance(PosX, PosY, chara.PosX, chara.PosY)), REF, 12))
                     {
                         chara.GetDamage(Weapon1.CalculateDamage());
                     }

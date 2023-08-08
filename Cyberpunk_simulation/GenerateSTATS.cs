@@ -21,9 +21,7 @@ namespace Cyberpunk_simulation
             move = 0;
             body = 0;
             emp = 0;
-            Random rnd = new Random(Guid.NewGuid().GetHashCode());
-            int dice = rnd.Next(1, 11);
-            switch (dice)
+            switch (Dice.RollD10())
             {
                 case 1:
                     intt = 7;

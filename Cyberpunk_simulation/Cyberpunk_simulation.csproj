@@ -44,10 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Area.cs" />
-    <Compile Include="Battle.cs" />
+    <Compile Include="Combat.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="CompletePackagesCreator.cs" />
     <Compile Include="EdgerunnerCreator.cs" />
+    <Compile Include="GenerateSTATS.cs" />
     <Compile Include="Gun.cs" />
     <Compile Include="MeleWeapon.cs" />
     <Compile Include="Pistol.cs" />

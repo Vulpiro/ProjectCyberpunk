@@ -46,8 +46,7 @@ namespace Cyberpunk_simulation
         }
         public override bool ChallangePT(int pt, int reforzw, int umj)
         {
-            Random rnd = new Random(Guid.NewGuid().GetHashCode());
-            int dice = rnd.Next(1, 11);
+            int dice = Dice.RollD10();
             Console.WriteLine("Rzut kosci wynosi {0} + REF {1} + Umiejetnosci strzeleckie {2} = {3} vs PT {4} ", dice, reforzw, umj, dice + reforzw + umj, pt);
             if (dice + reforzw + umj > pt)
             {
@@ -62,8 +61,7 @@ namespace Cyberpunk_simulation
             int dmg = 0;
             for (int i = 0; i < DMG; i++)
             {
-                Random rnd = new Random(Guid.NewGuid().GetHashCode());
-                int dice = rnd.Next(1, 7);
+                int dice = Dice.RollD6();
                 Console.WriteLine("Wynik rzutu koscia d6 = {0}", dice);
                 dmg += dice;
             }

@@ -18,7 +18,7 @@ namespace Cyberpunk_simulation
             //Character frogger = new Character("Fr0ger", CharaRole.Nomad,); // wszczepy na nogi by skakać wyżej bo wiecie żaba, i egzoszkielet na rece i kręgosłóp by przenosic rzeczy, poboczna broń magnetyczny bicz by zabierać jak żaba
             //Character shu = new Character("Shu", CharaRole.Netrunner,)
 
-            Battle.StartFight(new Character[] {forty, vulpiro}, warehouse);
+            Combat.StartFight(new Character[] {forty, vulpiro}, warehouse);
 
             Pistol barCiePis = new Pistol("Bardzo ciezki pisolet", 4, 8, 16, 1);
 
