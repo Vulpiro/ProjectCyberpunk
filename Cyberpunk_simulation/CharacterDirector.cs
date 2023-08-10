@@ -8,5 +8,11 @@ namespace Cyberpunk_simulation
 {
     class CharacterDirector
     {
+        private ICharacterBuilder _builder;
+
+        public ICharacterBuilder Builder
+        {
+            set { _builder = value; }
+        }
     }
 }
