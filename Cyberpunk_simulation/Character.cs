@@ -41,6 +41,13 @@ namespace Cyberpunk_simulation
         public int PosX { get; set; }
         public int PosY { get; set; }
 
+        #region Constructors
+        public Character(string name, CharacterRole role)
+        {
+            Name = name;
+            Role = role;
+            
+        }
         public Character(string name, CharacterRole role,
             int inte, int refl, int dex, int tech, int cool, int will, int luck, int move, int body, int emp)
         {
@@ -60,6 +67,7 @@ namespace Cyberpunk_simulation
 
             RoleRank = 4;
         }
+        #endregion
 
         #region Stats Methods
         public void SetMaxHP()

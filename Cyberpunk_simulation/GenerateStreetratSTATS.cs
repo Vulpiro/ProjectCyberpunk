@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Cyberpunk_simulation
 {
-    class GenerateSTATS
+    class GenerateStreetratSTATS
     {
-        public static void GenerateRockerRNDSTATS(out int intt, out int reff, out int dex, out int tech,
+        public static void GenerateStreetratRockerSTATS(out int intt, out int reff, out int dex, out int tech,
             out int cool, out int will, out int luck, out int move, out int body, out int emp)
         {
             intt = 0;

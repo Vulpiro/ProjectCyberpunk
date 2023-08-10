@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cyberpunk_simulation
 {
-    class EdgerunnerCreator
+    class CompletePackagesBuilder
     {
-        
     }
 }

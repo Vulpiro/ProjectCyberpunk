@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cyberpunk_simulation
 {
-    class CharacterSTATS
+    class CharacterDirector
     {
     }
 }

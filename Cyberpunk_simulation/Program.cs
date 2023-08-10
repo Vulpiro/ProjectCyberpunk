@@ -28,7 +28,7 @@ namespace Cyberpunk_simulation
             forty.Weapon1 = barCiePis;
             forty.Attack(vulpiro);
 
-            StreetratCreator.CreateStreetratUserInputCharacter();
+            StreetratBuilder.CreateStreetratUserInputCharacter();
 
         }
     }
