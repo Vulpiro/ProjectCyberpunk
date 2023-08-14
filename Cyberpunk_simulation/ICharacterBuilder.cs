@@ -8,5 +8,9 @@ namespace Cyberpunk_simulation
 {
     interface ICharacterBuilder
     {
+        void SetName();
+        void SetName(string name);
+        void PickRole();
+        void PickRole(CharacterRole role);
     }
 }

@@ -14,5 +14,11 @@ namespace Cyberpunk_simulation
         {
             set { _builder = value; }
         }
+
+        public void BuildStreetratUserInputCharacter()
+        {
+            this._builder.SetName();
+            this._builder.PickRole();
+        }
     }
 }

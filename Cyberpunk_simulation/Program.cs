@@ -10,6 +10,14 @@ namespace Cyberpunk_simulation
     {
         static void Main(string[] args)
         {
+            var director = new CharacterDirector();
+            var builder = new StreetratBuilder();
+            director.Builder = builder;
+
+            Console.WriteLine("Stworz nowa postac");
+            director.BuildStreetratUserInputCharacter();
+            Character user = builder.GetCharacter();
+
             Area warehouse = new Area("Magazyn", 50, 50);
 
             Character forty = new Character("Forty", CharacterRole.Rocker, 5, 6, 7, 5, 7, 8, 5, 7, 3, 6);
@@ -27,8 +35,6 @@ namespace Cyberpunk_simulation
 
             forty.Weapon1 = barCiePis;
             forty.Attack(vulpiro);
-
-            StreetratBuilder.CreateStreetratUserInputCharacter();
 
         }
     }

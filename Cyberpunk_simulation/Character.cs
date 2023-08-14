@@ -42,6 +42,10 @@ namespace Cyberpunk_simulation
         public int PosY { get; set; }
 
         #region Constructors
+        public Character()
+        {
+
+        }
         public Character(string name, CharacterRole role)
         {
             Name = name;

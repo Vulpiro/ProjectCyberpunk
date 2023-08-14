@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Area.cs" />
+    <Compile Include="CharacterDirector.cs" />
     <Compile Include="Combat.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="CompletePackagesBuilder.cs" />
@@ -51,7 +52,9 @@
     <Compile Include="EdgerunnerBuilder.cs" />
     <Compile Include="GenerateStreetratSTATS.cs" />
     <Compile Include="Gun.cs" />
+    <Compile Include="ICharacterBuilder.cs" />
     <Compile Include="MeleWeapon.cs" />
+    <Compile Include="Name.cs" />
     <Compile Include="Pistol.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
