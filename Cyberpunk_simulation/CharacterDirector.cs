@@ -17,8 +17,9 @@ namespace Cyberpunk_simulation
 
         public void BuildStreetratUserInputCharacter()
         {
-            this._builder.SetName();
-            this._builder.PickRole();
+            _builder.SetName();
+            _builder.PickRole();
+            _builder.RollSTATS();
         }
     }
 }

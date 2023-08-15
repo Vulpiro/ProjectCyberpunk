@@ -12,42 +12,45 @@ namespace Cyberpunk_simulation
 
         public StreetratBuilder()
         {
-            this.Reset();
+            Reset();
         }
 
         public void Reset()
         {
-            this.character = new Character();
+            character = new Character();
         }
 
         public Character GetCharacter()
         {
             Character result = this.character;
 
-            this.Reset();
+            Reset();
 
             return result;
         }
 
         public void SetName()
         {
-            this.character.Name = Name.UserInputNameSetup();
+            character.Name = Name.UserInputNameSetup();
         }
 
         public void SetName(string name)
         {
-            this.character.Name = name;
+            character.Name = name;
         }
         public void PickRole()
         {
-            this.character.Role = Role.UserInputRoleSetup();
+            character.Role = Role.UserInputRoleSetup();
         }
 
         public void PickRole(CharacterRole role)
         {
-            this.character.Role = role;
+            character.Role = role;
         }
 
-        
+        public void RollSTATS()
+        {
+            GenerateSTATS.GenerateStreetratSTATS(character);
+        }
     }
 }

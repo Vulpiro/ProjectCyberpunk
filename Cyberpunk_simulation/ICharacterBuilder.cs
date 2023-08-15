@@ -12,5 +12,6 @@ namespace Cyberpunk_simulation
         void SetName(string name);
         void PickRole();
         void PickRole(CharacterRole role);
+        void RollSTATS();
     }
 }
