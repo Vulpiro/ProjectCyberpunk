@@ -50,6 +50,7 @@
     <Compile Include="CompletePackagesBuilder.cs" />
     <Compile Include="Dice.cs" />
     <Compile Include="EdgerunnerBuilder.cs" />
+    <Compile Include="GenerateSkills.cs" />
     <Compile Include="GenerateSTATS.cs" />
     <Compile Include="Gun.cs" />
     <Compile Include="ICharacterBuilder.cs" />

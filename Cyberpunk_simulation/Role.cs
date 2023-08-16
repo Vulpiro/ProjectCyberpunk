@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cyberpunk_simulation
 {
-    // Muszę sprawić 
+    //
     enum CharacterRole
     {
         None,

@@ -11,7 +11,8 @@ namespace Cyberpunk_simulation
     {
         public string Name { get; set; }
 
-        #region Role
+        #region Role 
+        // Do przebudowania w przyszłości ponieważ każda postać może mieć wiele roli o różnej randze
         public CharacterRole Role { get; set; }
         public int RoleRank { get; set; }
         #endregion
@@ -31,7 +32,30 @@ namespace Cyberpunk_simulation
         public int CurrentHP { get; set; }
         #endregion
 
+        #region Skills
+        #region Awareness Skills
+        #endregion
+        #region Body Skills
+        #endregion
+        #region Control Skills
+        #endregion
+        #region Education Skills
+        #endregion
+        #region Fighting Skills
+        #endregion
+        #region Performance Skills
+        #endregion
+        #region Ranged Weapon Skills
+        public int Handgun { get; set; }
+        #endregion
+        #region Social Skills
+        #endregion
+        #region Technique Skills
+        #endregion
+        #endregion
+
         #region Items
+        // Itemy do przebudowania całkowicie
         public Weapon Weapon1 { get; set; }
         public int ActiveWeapon { get; set; }
         #endregion
@@ -44,13 +68,13 @@ namespace Cyberpunk_simulation
         #region Constructors
         public Character()
         {
-
+            RoleRank = 4;
         }
         public Character(string name, CharacterRole role)
         {
             Name = name;
             Role = role;
-            
+            RoleRank = 4;
         }
         public Character(string name, CharacterRole role,
             int inte, int refl, int dex, int tech, int cool, int will, int luck, int move, int body, int emp)
@@ -67,6 +91,28 @@ namespace Cyberpunk_simulation
             MOVE = move;
             BODY = body;
             EMP = emp;
+            SetMaxHP();
+
+            RoleRank = 4;
+        }
+        public Character(string name, CharacterRole role,
+            int inte, int refl, int dex, int tech, int cool, int will, int luck, int move, int body, int emp, int handgun)
+        {
+            Name = name;
+            Role = role;
+            INT = inte;
+            REF = refl;
+            DEX = dex;
+            TECH = tech;
+            COOL = cool;
+            WILL = will;
+            LUCK = luck;
+            MOVE = move;
+            BODY = body;
+            EMP = emp;
+
+            Handgun = handgun;
+
             SetMaxHP();
 
             RoleRank = 4;
@@ -100,7 +146,7 @@ namespace Cyberpunk_simulation
             {
                 if (Weapon1.IsAbleToShoot())
                 {
-                    if(Weapon1.ChallangePT(Weapon1.CalculatePT(Area.CalculateDistance(PosX, PosY, chara.PosX, chara.PosY)), REF, 12))
+                    if(Weapon1.ChallangePT(Weapon1.CalculatePT(Area.CalculateDistance(PosX, PosY, chara.PosX, chara.PosY)), REF, Handgun))
                     {
                         chara.GetDamage(Weapon1.CalculateDamage());
                     }
