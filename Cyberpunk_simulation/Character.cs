@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cyberpunk_simulation
 {
-    
+    // Klasa postaci niezależnie czy grywalnych czy npc
     class Character
     {
         public string Name { get; set; }
@@ -46,7 +46,8 @@ namespace Cyberpunk_simulation
         #region Performance Skills
         #endregion
         #region Ranged Weapon Skills
-        public int Handgun { get; set; }
+        public Skill handgun;
+
         #endregion
         #region Social Skills
         #endregion
@@ -74,6 +75,7 @@ namespace Cyberpunk_simulation
         {
             Name = name;
             Role = role;
+
             RoleRank = 4;
         }
         public Character(string name, CharacterRole role,
@@ -91,8 +93,9 @@ namespace Cyberpunk_simulation
             MOVE = move;
             BODY = body;
             EMP = emp;
-            SetMaxHP();
 
+            SetMaxHP();
+            SetSkills();
             RoleRank = 4;
         }
         public Character(string name, CharacterRole role,
@@ -111,15 +114,18 @@ namespace Cyberpunk_simulation
             BODY = body;
             EMP = emp;
 
-            Handgun = handgun;
-
             SetMaxHP();
-
+            SetSkills();
             RoleRank = 4;
         }
         #endregion
 
         #region Stats Methods
+
+        public void SetSkills()
+        {
+            handgun = new Skill("handgun", REF);
+        }
         public void SetMaxHP()
         {
             MaxHP = (10 + (5 * (int)Math.Ceiling((double)(WILL + BODY) / 2)));
@@ -146,7 +152,7 @@ namespace Cyberpunk_simulation
             {
                 if (Weapon1.IsAbleToShoot())
                 {
-                    if(Weapon1.ChallangePT(Weapon1.CalculatePT(Area.CalculateDistance(PosX, PosY, chara.PosX, chara.PosY)), REF, Handgun))
+                    if(Weapon1.ChallangePT(Weapon1.CalculatePT(Area.CalculateDistance(PosX, PosY, chara.PosX, chara.PosY)), REF, handgun.Base))
                     {
                         chara.GetDamage(Weapon1.CalculateDamage());
                     }

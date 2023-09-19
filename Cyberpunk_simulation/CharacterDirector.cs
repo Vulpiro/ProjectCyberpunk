@@ -15,10 +15,17 @@ namespace Cyberpunk_simulation
             set { _builder = value; }
         }
 
-        public void BuildStreetratUserInputCharacter()
+        public void BuildStreetratCharacter()
         {
             _builder.SetName();
             _builder.PickRole();
+            _builder.RollSTATS();
+        }
+
+        public void BuildStreetratCharacter(string name, CharacterRole role)
+        {
+            _builder.SetName(name);
+            _builder.PickRole(role);
             _builder.RollSTATS();
         }
     }

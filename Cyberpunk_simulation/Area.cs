@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cyberpunk_simulation
 {
+    // To ma być klasa która tworzy przestrzenie w których będą egzystować postacie
     class Area
     {
         public string Name { get; set; }

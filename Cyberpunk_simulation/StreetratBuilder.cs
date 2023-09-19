@@ -51,6 +51,8 @@ namespace Cyberpunk_simulation
         public void RollSTATS()
         {
             GenerateSTATS.GenerateStreetratSTATS(character);
+            character.SetSkills();
+            character.SetMaxHP();
         }
     }
 }
