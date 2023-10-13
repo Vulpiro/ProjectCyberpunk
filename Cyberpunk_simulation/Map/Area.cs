@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Cyberpunk_simulation.Characters;
+using Cyberpunk_simulation.Map.MapObjects;
 
-namespace Cyberpunk_simulation
+namespace Cyberpunk_simulation.Map
 {
     // To ma być klasa która tworzy przestrzenie w których będą egzystować postacie
     class Area
     {
         public string Name { get; set; }
-        public Character[,] Map { get; set; }
+        public MapObject[,] Map { get; set; }
         
 
         public Area(string name, int x, int y)
         {
             Name = name;
-            Map = new Character[x, y];
+            Map = new MapObject[x, y];
         }
 
         public bool CheckIfEmpty(int x, int y)
@@ -28,25 +30,20 @@ namespace Cyberpunk_simulation
             return true;
         }
 
-        public void SetObject(Character obj, int x, int y)
+        public void SetObject(MapObject obj, int x, int y)
         {
             if(CheckIfEmpty(x, y))
             {
                 Map[x, y] = obj;
-                obj.PosX = x;
-                obj.PosY = y;
-                Console.WriteLine("{0} Zmienil pozycje", obj.Name);
-            }
-            else
-            {
-                Console.WriteLine("Nie mozesz tam pojsc");
             }
         }
 
-        public Character GetObject(int x, int y)
+        public MapObject GetObject(int x, int y)
         {
             return Map[x, y]; 
         }
+
+        
 
         public static int CalculateDistance(int x1, int y1, int x2, int y2)
         {

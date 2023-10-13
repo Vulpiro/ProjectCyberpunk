@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cyberpunk_simulation
+namespace Cyberpunk_simulation.Characters
 {
     class StreetratBuilder : ICharacterBuilder
     {
@@ -31,7 +31,7 @@ namespace Cyberpunk_simulation
 
         public void SetName()
         {
-            character.Name = Name.UserInputNameSetup();
+            character.Name = InputName.UserInputNameSetup();
         }
 
         public void SetName(string name)

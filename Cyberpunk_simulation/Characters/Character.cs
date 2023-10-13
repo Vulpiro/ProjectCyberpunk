@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Cyberpunk_simulation.Map;
 
-namespace Cyberpunk_simulation
+namespace Cyberpunk_simulation.Characters
 {
     // Klasa postaci niezależnie czy grywalnych czy npc
     class Character
@@ -63,9 +64,6 @@ namespace Cyberpunk_simulation
 
         public int Initiative { get; set; }
 
-        public int PosX { get; set; }
-        public int PosY { get; set; }
-
         #region Constructors
         public Character()
         {
@@ -98,26 +96,26 @@ namespace Cyberpunk_simulation
             SetSkills();
             RoleRank = 4;
         }
-        public Character(string name, CharacterRole role,
-            int inte, int refl, int dex, int tech, int cool, int will, int luck, int move, int body, int emp, int handgun)
-        {
-            Name = name;
-            Role = role;
-            INT = inte;
-            REF = refl;
-            DEX = dex;
-            TECH = tech;
-            COOL = cool;
-            WILL = will;
-            LUCK = luck;
-            MOVE = move;
-            BODY = body;
-            EMP = emp;
+        //public Character(string name, CharacterRole role,
+        //    int inte, int refl, int dex, int tech, int cool, int will, int luck, int move, int body, int emp, int handgun)
+        //{
+        //    Name = name;
+        //    Role = role;
+        //    INT = inte;
+        //    REF = refl;
+        //    DEX = dex;
+        //    TECH = tech;
+        //    COOL = cool;
+        //    WILL = will;
+        //    LUCK = luck;
+        //    MOVE = move;
+        //    BODY = body;
+        //    EMP = emp; 
 
-            SetMaxHP();
-            SetSkills();
-            RoleRank = 4;
-        }
+        //    SetMaxHP();
+        //    SetSkills();
+        //    RoleRank = 4;
+        //}
         #endregion
 
         #region Stats Methods
@@ -146,24 +144,24 @@ namespace Cyberpunk_simulation
         }
 
         #endregion
-        public void Attack(Character chara)
-        {
-            if (Weapon1.WT == WeaponType.Ranged)
-            {
-                if (Weapon1.IsAbleToShoot())
-                {
-                    if(Weapon1.ChallangePT(Weapon1.CalculatePT(Area.CalculateDistance(PosX, PosY, chara.PosX, chara.PosY)), REF, handgun.Base))
-                    {
-                        chara.GetDamage(Weapon1.CalculateDamage());
-                    }
-                }
+        //public void Attack(Character chara)
+        //{
+        //    if (Weapon1.WT == WeaponType.Ranged)
+        //    {
+        //        if (Weapon1.IsAbleToShoot())
+        //        {
+        //            if(Weapon1.ChallangePT(Weapon1.CalculatePT(Area.CalculateDistance(PosX, PosY, chara.PosX, chara.PosY)), REF, handgun.Base))
+        //            {
+        //                chara.GetDamage(Weapon1.CalculateDamage());
+        //            }
+        //        }
                 
-            }
-            else if (Weapon1.WT == WeaponType.Mele)
-            {
+        //    }
+        //    else if (Weapon1.WT == WeaponType.Mele)
+        //    {
 
-            }
+        //    }
             
-        }
+        //}
     }
 }

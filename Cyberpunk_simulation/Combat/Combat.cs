@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Cyberpunk_simulation.Characters;
 
 namespace Cyberpunk_simulation
 {
@@ -12,7 +13,7 @@ namespace Cyberpunk_simulation
         public static void StartCombat(Character[] characterArray)
         {
             RollForInitiative(characterArray);
-            characterArray = SortByInitiative(characterArray);
+            //characterArray = SortByInitiative(characterArray);
         }
 
         public static void RollForInitiative(Character[] characters)

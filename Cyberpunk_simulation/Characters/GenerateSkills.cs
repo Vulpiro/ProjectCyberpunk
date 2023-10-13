@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cyberpunk_simulation
+namespace Cyberpunk_simulation.Characters
 {
     class GenerateSkills
     {

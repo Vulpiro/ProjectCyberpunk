@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cyberpunk_simulation
 {
-    class Name
+    class InputName
     {
         public static string UserInputNameSetup()
         {
