@@ -10,11 +10,12 @@ namespace Cyberpunk_simulation.Net.Programs
     {
         public SeeYa()
         {
-            Name = "See Ya.exe";
+            Name = "SeeYa.exe";
         }
 
-        public void Activate(ref int mod)
+        public override void Activate(ref int mod)
         {
+            Console.WriteLine("SeeYa.exe Activated");
             mod = mod + 2;
         }
     }

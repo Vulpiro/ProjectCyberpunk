@@ -50,6 +50,7 @@ namespace Cyberpunk_simulation.Net
 
         public void SelectInterfaceAbility(string[] command)
         {
+            int i = 0;
             switch (command[0])
             {
                 case "backdoor":
@@ -84,12 +85,20 @@ namespace Cyberpunk_simulation.Net
                     WaitForResponse();
                     break;
                 case "seeya":
-                    SeeYa seeya = new SeeYa();
-                    seeya.Activate(ref pathfindermod);
+                    
+                    foreach (NetProgram prog in rezzedPrograms)
+                    {
+                        if (prog == null)
+                        {
+                            rezzedPrograms[i] = new SeeYa();
+                            rezzedPrograms[i].Activate(ref pathfindermod);
+                            break;
+                        }
+                        i++;
+                    }
                     WaitForResponse();
                     break;
                 case "worm":
-                    int i = 0;
                     foreach (NetProgram prog in rezzedPrograms)
                     {
                         if(prog == null)
@@ -164,8 +173,8 @@ namespace Cyberpunk_simulation.Net
         }
         public void InterfaceUI()
         {
-            Console.WriteLine("Interface Rank: {0} | Net Actions: error | Netrunner: error |", netrunnerInterfaceRank);
-            Console.WriteLine("-----------------------------------------------------------");
+            Console.WriteLine("Interface Rank: {0} | Net Actions: error | Netrunner: Satomi |", netrunnerInterfaceRank);
+            Console.WriteLine("------------------------------------------------------------");
             if (rezzedPrograms[0] != null)
             {
                 Console.WriteLine("Rezzed Programs:");

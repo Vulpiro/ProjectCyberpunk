@@ -9,9 +9,13 @@ namespace Cyberpunk_simulation.Net.Programs
     class NetProgram
     {
         public string Name { get; set; }
-        public void Activate()
+        public virtual void Activate()
         {
-            
+
+        }
+        public virtual void Activate(ref int mod)
+        {
+
         }
         public void Deactivate()
         {

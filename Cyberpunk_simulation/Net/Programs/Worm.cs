@@ -13,9 +13,9 @@ namespace Cyberpunk_simulation.Net.Programs
             Name = "Worm.exe";
         }
 
-        public void Activate(ref int mod)
+        public override void Activate(ref int mod)
         {
-            Console.WriteLine("Worm activated");
+            Console.WriteLine("Worm.exe Activated");
             mod = mod + 2;
         }
     }

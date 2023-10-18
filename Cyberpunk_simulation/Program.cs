@@ -21,19 +21,20 @@ namespace Cyberpunk_simulation
             
             Netrunning net = new Netrunning();
 
-            NetArchitectureBody laptop = new NetArchitectureBody(6);
-            laptop.AddObject(new NetObjectPassword(6), 0);
-            laptop.AddObject(new NetObjectFile(6, "messages", "Z wiadomosci wynika ze w Industrial czesci Heywood jest odcieta od wsparcia, fabryka przejeta przez malestron"), 1);
-            laptop.AddObject(new NetObjectPassword(8), 2);
-            laptop.AddObject(new NetObjectFile(8, "list", "Jest to lista przetrzymywanych osob, widac ludzi z innych gangow, widac czy sa rozkladani na czesci, czy odsylani na nagrywanie BD, na pokladzie jest porwany medtech ktory jest zmuszany do rozkladania ludzi"), 3);
-            laptop.AddObject(new NetObjectPassword(10), 4);
-            laptop.AddObject(new NetObjectFile(10, "security","Masz dostep do planow zabezpieczen budynku, widzisz ze ich zabezpieczenia sa silne, a wtargniecie sie na ich teren graniczy z cudem"), 5);
+            
+            
+            
+            //NetArchitectureBody laptop = new NetArchitectureBody(6);
+            //laptop.AddObject(new NetObjectPassword(6), 0);
+            //laptop.AddObject(new NetObjectFile(6, "messages", "Z wiadomosci wynika ze w Industrial czesci Heywood jest odcieta od wsparcia reszty gangu, fabryka przejeta przez malestron"), 1);
+            //laptop.AddObject(new NetObjectPassword(8), 2);
+            //laptop.AddObject(new NetObjectFile(8, "list", "Jest to lista przetrzymywanych osob, widac ludzi z innych gangow, widac czy sa rozkladani na czesci, czy odsylani na nagrywanie pojebanych BD, na pokladzie jest porwany medtech ktory jest zmuszany do rozkladania ludzi"), 3);
+            //laptop.AddObject(new NetObjectPassword(10), 4);
+            //laptop.AddObject(new NetObjectFile(10, "security","Masz dostep do planow zabezpieczen budynku, widzisz ze ich zabezpieczenia sa silne, a wtargniecie sie na ich teren graniczy z cudem, przy waszym uzbrojeniu"), 5);
 
-            NetArchitectureBody sunshineMotel = new NetArchitectureBody(4);
-            sunshineMotel.AddObject(new NetObjectPassword(8), 0);
-            sunshineMotel.AddObject(new NetObjectFile(8, "customers", "Na liscie nie ma was, nikt nie bedzie wiedziec ze tu nocowaliście"), 1);
+            
 
-            net.StartNetrunning(laptop);
+            net.StartNetrunning();
             //ShowMapArea.ShowArea(sunsetmotel);
 
             #region old code
