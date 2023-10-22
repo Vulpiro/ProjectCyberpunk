@@ -52,7 +52,11 @@
     <Compile Include="Map\MapObjects\MapObjectCharacter.cs" />
     <Compile Include="Map\MapObjects\MapObjectWall.cs" />
     <Compile Include="Map\ShowMapArea.cs" />
+    <Compile Include="Net\BlackICE\NetBlackIce.cs" />
+    <Compile Include="Net\InterfaceAbilities\Control.cs" />
     <Compile Include="Net\InterfaceAbilities\Pathfinder.cs" />
+    <Compile Include="Net\NetArchitecture\NetObjects\NetObjectControlNode.cs" />
+    <Compile Include="Net\NetNetrunner.cs" />
     <Compile Include="Net\Programs\NetProgram.cs" />
     <Compile Include="Net\Programs\SeeYa.cs" />
     <Compile Include="Net\Programs\Worm.cs" />
@@ -66,12 +70,9 @@
     <Compile Include="Systems\InputName.cs" />
     <Compile Include="Net\InterfaceAbilities\Open.cs" />
     <Compile Include="Net\NetActions.cs" />
-    <Compile Include="Net\NetArchitecture\INetArchitectureBuilder.cs" />
     <Compile Include="Net\InterfaceAbilities\Backdoor.cs" />
     <Compile Include="Net\InterfaceAbilities\EyeDee.cs" />
     <Compile Include="Net\NetArchitecture\NetArchitectureBody.cs" />
-    <Compile Include="Net\NetArchitecture\NetArchitectureBuilder.cs" />
-    <Compile Include="Net\NetArchitecture\NetArchitectureDirector.cs" />
     <Compile Include="Net\NetArchitecture\NetArchitectureObject.cs" />
     <Compile Include="Net\NetArchitecture\NetObjects\NetObjectFile.cs" />
     <Compile Include="Net\NetArchitecture\NetObjects\NetObjectPassword.cs" />

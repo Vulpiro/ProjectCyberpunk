@@ -16,25 +16,29 @@ namespace Cyberpunk_simulation
     {
         static void Main(string[] args)
         {
-            Area sunsetmotel = new Area("Sunset Motel", 10, 10);
-            sunsetmotel.SetObject(new MapObjectWall(), 2, 2);
+            //Area sunsetmotel = new Area("Sunset Motel", 10, 10);
+            //sunsetmotel.SetObject(new MapObjectWall(), 2, 2);
             
             Netrunning net = new Netrunning();
+            NetNetrunner satomi = new NetNetrunner(1, "Satomi");
 
-            
-            
-            
-            //NetArchitectureBody laptop = new NetArchitectureBody(6);
-            //laptop.AddObject(new NetObjectPassword(6), 0);
-            //laptop.AddObject(new NetObjectFile(6, "messages", "Z wiadomosci wynika ze w Industrial czesci Heywood jest odcieta od wsparcia reszty gangu, fabryka przejeta przez malestron"), 1);
-            //laptop.AddObject(new NetObjectPassword(8), 2);
-            //laptop.AddObject(new NetObjectFile(8, "list", "Jest to lista przetrzymywanych osob, widac ludzi z innych gangow, widac czy sa rozkladani na czesci, czy odsylani na nagrywanie pojebanych BD, na pokladzie jest porwany medtech ktory jest zmuszany do rozkladania ludzi"), 3);
-            //laptop.AddObject(new NetObjectPassword(10), 4);
-            //laptop.AddObject(new NetObjectFile(10, "security","Masz dostep do planow zabezpieczen budynku, widzisz ze ich zabezpieczenia sa silne, a wtargniecie sie na ich teren graniczy z cudem, przy waszym uzbrojeniu"), 5);
+            NetArchitectureBody warsztat = new NetArchitectureBody(6);
+            warsztat.AddObject(new NetObjectPassword(6), 0);
+            warsztat.AddObject(new NetObjectControlNode(8), 0);
 
-            
 
-            net.StartNetrunning();
+
+            NetArchitectureBody laptop = new NetArchitectureBody(6);
+            laptop.AddObject(new NetObjectPassword(6), 0);
+            laptop.AddObject(new NetObjectFile(6, "messages", "Z wiadomosci wynika ze w Industrial czesci Heywood jest odcieta od wsparcia reszty gangu, fabryka przejeta przez malestron"), 1);
+            laptop.AddObject(new NetObjectPassword(8), 2);
+            laptop.AddObject(new NetObjectFile(8, "list", "Jest to lista przetrzymywanych osob, widac ludzi z innych gangow, widac czy sa rozkladani na czesci, czy odsylani na nagrywanie pojebanych BD, na pokladzie jest porwany medtech ktory jest zmuszany do rozkladania ludzi"), 3);
+            laptop.AddObject(new NetObjectPassword(10), 4);
+            laptop.AddObject(new NetObjectFile(10, "security", "Masz dostep do planow zabezpieczen budynku, widzisz ze ich zabezpieczenia sa silne, a wtargniecie sie na ich teren graniczy z cudem, przy waszym uzbrojeniu"), 5);
+
+
+
+            net.StartNetrunning(warsztat, satomi);
             //ShowMapArea.ShowArea(sunsetmotel);
 
             #region old code

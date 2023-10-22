@@ -14,17 +14,18 @@ namespace Cyberpunk_simulation.Net
     // Classa ta jest łączneniem wszystkiego co jest związanego z umiejętnościami netrunningu, tworzysz obiekt tego by podłączyć się do Architektur
     class Netrunning
     {
-        public int netrunnerInterfaceRank = 1;
-
         public int backdoormod = 0;
         public int pathfindermod = 0;
 
         NetArchitectureBody netArchitecture;
+        NetNetrunner netrunner;
 
         NetProgram[] rezzedPrograms = new NetProgram[5];
-        public void StartNetrunning(NetArchitectureBody net)
+        public void StartNetrunning(NetArchitectureBody net, NetNetrunner runner)
         {
             netArchitecture = net;
+            netrunner = runner;
+            runner.NetrunnerNetPos = 0;
             netArchitecture.CheckForPassword();
             RefreshDisplay();
         }
@@ -54,17 +55,21 @@ namespace Cyberpunk_simulation.Net
             switch (command[0])
             {
                 case "backdoor":
-                    Backdoor.Activate(netArchitecture, netrunnerInterfaceRank, backdoormod);
+                    Backdoor.Activate(netArchitecture, netrunner.InterfaceRank, backdoormod);
+                    WaitForResponse();
+                    break;
+                case "control":
+                    Control.Activate(netArchitecture, netrunner.InterfaceRank);
                     WaitForResponse();
                     break;
                 case "eyedee":
                     if (command.Length > 1 && int.TryParse(command[1], out _))
                     {
-                        EyeDee.Activate(netArchitecture, netrunnerInterfaceRank, int.Parse(command[1]));
+                        EyeDee.Activate(netArchitecture, netrunner.InterfaceRank, int.Parse(command[1]));
                         WaitForResponse();
                         break;
                     }
-                    EyeDee.Activate(netArchitecture, netrunnerInterfaceRank);
+                    EyeDee.Activate(netArchitecture, netrunner.InterfaceRank);
                     WaitForResponse();
                     break;
                 case "jackout":
@@ -73,7 +78,7 @@ namespace Cyberpunk_simulation.Net
                 case "open":
                     if (command.Length > 1 && int.TryParse(command[1], out _))
                     {
-                        Open.Activate(netArchitecture, netrunnerInterfaceRank, int.Parse(command[1]));
+                        Open.Activate(netArchitecture, netrunner.InterfaceRank, int.Parse(command[1]));
                         WaitForResponse();
                         break;
                     }
@@ -81,11 +86,10 @@ namespace Cyberpunk_simulation.Net
                     WaitForResponse();
                     break;
                 case "pathfinder":
-                    Pathfinder.Activate(netArchitecture, netrunnerInterfaceRank, pathfindermod);
+                    Pathfinder.Activate(netArchitecture, netrunner.InterfaceRank, pathfindermod);
                     WaitForResponse();
                     break;
                 case "seeya":
-                    
                     foreach (NetProgram prog in rezzedPrograms)
                     {
                         if (prog == null)
@@ -149,6 +153,10 @@ namespace Cyberpunk_simulation.Net
             {
                 Console.WriteLine("[{0}] file", i);
             }
+            else if (obj is NetObjectControlNode)
+            {
+                Console.WriteLine("[{0}] node", i);
+            }
             else
             {
                 Console.WriteLine("[{0}] null", i);
@@ -173,8 +181,8 @@ namespace Cyberpunk_simulation.Net
         }
         public void InterfaceUI()
         {
-            Console.WriteLine("Interface Rank: {0} | Net Actions: error | Netrunner: Satomi |", netrunnerInterfaceRank);
-            Console.WriteLine("------------------------------------------------------------");
+            Console.WriteLine("Interface Rank: {0} | Net Actions: {1} | Netrunner: {2} |", netrunner.InterfaceRank, netrunner.NetActions, netrunner.Name);
+            Console.WriteLine("--------------------------------------------------------");
             if (rezzedPrograms[0] != null)
             {
                 Console.WriteLine("Rezzed Programs:");
