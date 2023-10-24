@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Cyberpunk_simulation.Net.BlackICE;
 
 namespace Cyberpunk_simulation.Net.NetArchitecture
 {
@@ -13,6 +14,16 @@ namespace Cyberpunk_simulation.Net.NetArchitecture
         public bool IsShowed { get; set; }
 
         public int dv = 0;
+
+        public List<NetBlackIce> blackIceObjs = new List<NetBlackIce>(); 
+
+        public void CheckForBlackIce()
+        {
+            if(blackIceObjs[0] != null)
+            {
+                Console.WriteLine("WARNING!!! Black Ice found!!!");
+            }
+        }
 
         #region Constructors
         public NetArchitectureObject()

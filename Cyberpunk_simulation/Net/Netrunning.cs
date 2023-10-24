@@ -69,11 +69,16 @@ namespace Cyberpunk_simulation.Net
                         WaitForResponse();
                         break;
                     }
-                    EyeDee.Activate(netArchitecture, netrunner.InterfaceRank);
+                    EyeDee.Activate(netArchitecture, netrunner.InterfaceRank, netrunner.NetrunnerNetPos);
                     WaitForResponse();
                     break;
                 case "jackout":
                     StopNetrunning();
+                    break;
+                case "move":
+                    netrunner.NetrunnerNetPos = int.Parse(command[1]);
+                    netArchitecture.architecture[netrunner.NetrunnerNetPos].CheckForBlackIce();
+                    WaitForResponse();
                     break;
                 case "open":
                     if (command.Length > 1 && int.TryParse(command[1], out _))
@@ -127,6 +132,16 @@ namespace Cyberpunk_simulation.Net
             int i = 0;
             foreach (NetArchitectureObject netobject in net.architecture)
             {
+                if (i == netrunner.NetrunnerNetPos)
+                {
+                    Console.BackgroundColor = ConsoleColor.White;
+                    Console.ForegroundColor = ConsoleColor.Black;
+                }
+                else
+                {
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                }
                 if (netobject.IsAccessed == true)
                 {
                     Console.WriteLine("[{0}] {1}", i, netobject.Name);

@@ -7,8 +7,10 @@ using Cyberpunk_simulation.Net.NetArchitecture;
 
 namespace Cyberpunk_simulation.Net.BlackICE
 {
-    class NetBlackIce : NetArchitectureObject
+    class NetBlackIce
     {
+        public string Name { get; set; }
+
         public int PER { get; set; }
         public int SPD { get; set; }
         public int ATK { get; set; }
@@ -19,8 +21,8 @@ namespace Cyberpunk_simulation.Net.BlackICE
         public NetBlackIce(string name, int per, int spd, int atk, int def, int rez)
         {
             Name = name;
-            IsAccessed = true;
-            IsShowed = false;
+            //IsAccessed = true;
+            //IsShowed = false;
 
             PER = per;
             SPD = spd;

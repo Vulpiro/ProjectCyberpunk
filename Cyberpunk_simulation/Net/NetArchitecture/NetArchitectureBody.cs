@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Cyberpunk_simulation.Net.NetArchitecture.NetObjects;
+using Cyberpunk_simulation.Net.BlackICE;
 
 namespace Cyberpunk_simulation.Net.NetArchitecture
 {
@@ -18,6 +19,21 @@ namespace Cyberpunk_simulation.Net.NetArchitecture
         public void AddObject(NetArchitectureObject obj, int position)
         {
             architecture[position] = obj;
+        }
+
+        public void AddBlackIce(NetBlackIce obj, int position)
+        {
+            if(architecture[position] == null)
+            {
+                NetArchitectureObject temp = new NetArchitectureObject();
+                temp.blackIceObjs.Add(obj);
+                architecture[position] = temp;
+            }
+            else
+            {
+                architecture[position].blackIceObjs.Add(obj);
+            }
+            
         }
 
         public void CheckForPassword()

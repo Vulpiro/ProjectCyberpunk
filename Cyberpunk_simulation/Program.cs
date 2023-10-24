@@ -28,17 +28,17 @@ namespace Cyberpunk_simulation
 
 
 
-            NetArchitectureBody laptop = new NetArchitectureBody(6);
+            NetArchitectureBody laptop = new NetArchitectureBody(7);
             laptop.AddObject(new NetObjectPassword(6), 0);
             laptop.AddObject(new NetObjectFile(6, "messages", "Z wiadomosci wynika ze w Industrial czesci Heywood jest odcieta od wsparcia reszty gangu, fabryka przejeta przez malestron"), 1);
             laptop.AddObject(new NetObjectPassword(8), 2);
             laptop.AddObject(new NetObjectFile(8, "list", "Jest to lista przetrzymywanych osob, widac ludzi z innych gangow, widac czy sa rozkladani na czesci, czy odsylani na nagrywanie pojebanych BD, na pokladzie jest porwany medtech ktory jest zmuszany do rozkladania ludzi"), 3);
             laptop.AddObject(new NetObjectPassword(10), 4);
             laptop.AddObject(new NetObjectFile(10, "security", "Masz dostep do planow zabezpieczen budynku, widzisz ze ich zabezpieczenia sa silne, a wtargniecie sie na ich teren graniczy z cudem, przy waszym uzbrojeniu"), 5);
+            laptop.AddBlackIce(new Net.BlackICE.NetBlackIce("aa", 1, 2, 2, 2, 2), 6);
 
 
-
-            net.StartNetrunning(warsztat, satomi);
+            net.StartNetrunning(laptop, satomi);
             //ShowMapArea.ShowArea(sunsetmotel);
 
             #region old code
