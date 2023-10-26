@@ -56,6 +56,7 @@
     <Compile Include="Net\InterfaceAbilities\Control.cs" />
     <Compile Include="Net\InterfaceAbilities\Pathfinder.cs" />
     <Compile Include="Net\NetArchitecture\NetObjects\NetObjectControlNode.cs" />
+    <Compile Include="Net\NetCombat.cs" />
     <Compile Include="Net\NetNetrunner.cs" />
     <Compile Include="Net\Programs\NetProgram.cs" />
     <Compile Include="Net\Programs\SeeYa.cs" />

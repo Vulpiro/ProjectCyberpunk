@@ -53,5 +53,10 @@ namespace Cyberpunk_simulation.Net
                     break;
             }
         }
+
+        public void TakeDamage(int damage)
+        {
+
+        }
     }
 }

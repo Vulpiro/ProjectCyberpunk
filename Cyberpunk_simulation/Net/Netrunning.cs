@@ -77,7 +77,7 @@ namespace Cyberpunk_simulation.Net
                     break;
                 case "move":
                     netrunner.NetrunnerNetPos = int.Parse(command[1]);
-                    netArchitecture.architecture[netrunner.NetrunnerNetPos].CheckForBlackIce();
+                    netArchitecture.architecture[netrunner.NetrunnerNetPos].CheckForBlackIce(netrunner);
                     WaitForResponse();
                     break;
                 case "open":

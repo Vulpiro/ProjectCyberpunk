@@ -17,11 +17,11 @@ namespace Cyberpunk_simulation.Net.NetArchitecture
 
         public List<NetBlackIce> blackIceObjs = new List<NetBlackIce>(); 
 
-        public void CheckForBlackIce()
+        public void CheckForBlackIce(NetNetrunner runner)
         {
             if(blackIceObjs[0] != null)
             {
-                Console.WriteLine("WARNING!!! Black Ice found!!!");
+                NetCombat.StartNetCombat(runner, blackIceObjs);
             }
         }
 
